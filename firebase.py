@@ -15,9 +15,11 @@ config = {
 firebase = pyrebase.initialize_app(config)
 database = firebase.database()
 
-data = [{"Name": "Ridhi", "Text": "enjoy the rhythm"},
-        {"Name": "Valarmathi", "Text": "looking to help you"},
-        {"Name": "Selvi", "Text": "welcome to the world"},
-        {"Name": "Franc", "Text": "trial is good"}]
+user_data = {"Ridhi" :{"Text": "enjoy the rhythm","stage1":0,"stage2":0},
+        "Valarmathi":{"Text": "looking to help you","stage1":0,"stage2":0},
+        "Selvi":{"Text": "welcome to the world","stage1":0,"stage2":0},
+        "Franc":{"Text": "trial is good","stage1":0,"stage2":0}}
+stages_data = {"stage1":0,"stage2":0}
 
-database.child("Users").set(data)
+database.child("Users").set(user_data)
+database.child("Stages").set(stages_data)
